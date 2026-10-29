@@ -1,0 +1,15 @@
+[Unit]
+Description=Display Canlis portrait
+After=default.target
+
+[Service]
+Type=simple
+Restart=always
+WorkingDirectory=/home/%u/canlis
+ExecStart=/home/%u/canlis/.venv/bin/python /home/%u/canlis/player.py
+StandardOutput=journal
+StandardError=journal
+Environment="PATH=/home/%u/canlis/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+[Install]
+WantedBy=default.target

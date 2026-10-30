@@ -3,6 +3,8 @@ import pygame
 import time
 import sys
 
+
+
 def play_loop_pingpong(video_path, duration_of_first_frame):
     cap = cv2.VideoCapture(video_path)
     fps = cap.get(cv2.CAP_PROP_FPS) or 30.0
@@ -11,6 +13,7 @@ def play_loop_pingpong(video_path, duration_of_first_frame):
 
     pygame.init()
     screen = pygame.display.set_mode((vw, vh), pygame.FULLSCREEN | pygame.SCALED)
+    pygame.mouse.set_visible(False)
     clock = pygame.time.Clock()
 
     # --- SMART PRE-LOADING ---
@@ -57,4 +60,5 @@ def play_loop_pingpong(video_path, duration_of_first_frame):
             pygame.display.flip()
             clock.tick(fps)
 
-play_loop_pingpong("applied.mp4", 5)
+play_loop_pingpong("applied.mp4", 15)
+# play_loop_pingpong("yyy.mp4", 5)
